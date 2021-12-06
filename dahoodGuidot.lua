@@ -1,4 +1,22 @@
-
+pcall(function()
+    game.StarterGui:SetCore("SendNotification", {
+      Title = 'Welcome';
+      Text = 'welcome to script Am';
+      Duration = 10;
+    })
+    if not game.Players.LocalPlayer:IsInGroup(234234234234234234234345645754456456) then
+      coroutine.resume(coroutine.create(function()
+         wait(10)
+         game.StarterGui:SetCore("SendNotification", {
+          Title = 'discord';
+          Text = 'join server discord copied in keybord';
+          Duration = 20;
+         })
+         setclipboard('https://discord.gg/pnRXzeKK')
+      end))
+    end
+  end)
+  
 
 local ScreenGui = Instance.new("ScreenGui")
 local Main = Instance.new("Frame")
@@ -73,7 +91,7 @@ Acmode.BackgroundColor3 = Color3.fromRGB(24, 54, 248)
 Acmode.Position = UDim2.new(0, 0, -0.000710388704, 0)
 Acmode.Size = UDim2.new(0, 774, 0, 50)
 Acmode.Font = Enum.Font.SourceSansSemibold
-Acmode.Text = "Arab Mode"
+Acmode.Text = "Ac mode"
 Acmode.TextColor3 = Color3.fromRGB(0, 0, 0)
 Acmode.TextScaled = true
 Acmode.TextSize = 14.000
