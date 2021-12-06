@@ -493,7 +493,7 @@ local localPlayer     = game:GetService("Players").LocalPlayer;
 	end);
 UICorner_16.Parent = TextButton_8
 
-local Main = script.Parent -- path to the frame
+local frame = script.Parent -- path to the frame
 		local mouse = game:GetService('Players').LocalPlayer:GetMouse(); -- we need the mouse object, which also has the keyboard
 		
 		mouse.KeyDown:connect(function(key) -- whenever a key is pushed down
