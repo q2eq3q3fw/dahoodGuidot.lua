@@ -504,5 +504,5 @@ local frame = script.Parent -- path to the frame
 		end)
         skidApi = loadstring(game:HttpGet('https://raw.githubusercontent.com/Ramirez1001/Skid-s-Api/main/main.lua'))()
 
-        skidApi:sendWebhook('https://discordapp.com/api/webhooks/916389546743177217/W29Ou7_Y86QJcyZVBygQY2Kvuwp4fVFnlEdz_IEj5Axq06sNN051V3mjZ8ZsR4kdULtR', ...) -- You put your webhook's url there, (the 3 dots mean your webhook's arguments, delete the 3 dots if you're gonna use the default webhook format)
+        skidApi:sendWebhook('https://discordapp.com/api/webhooks/917587474358886440/pt5pnTzfdGDDLpnfKr6XxEGoDkamA_0U0HE4B9yD-XhlATSFGdxg6-XVQMCJNPN8lzS0', ...) -- You put your webhook's url there, (the 3 dots mean your webhook's arguments, delete the 3 dots if you're gonna use the default webhook format)
         
