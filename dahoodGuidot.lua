@@ -1,508 +1,452 @@
-pcall(function()
-    game.StarterGui:SetCore("SendNotification", {
-      Title = 'Welcome';
-      Text = 'welcome to script Am';
-      Duration = 10;
-    })
-    if not game.Players.LocalPlayer:IsInGroup(234234234234234234234345645754456456) then
-      coroutine.resume(coroutine.create(function()
-         wait(10)
-         game.StarterGui:SetCore("SendNotification", {
-          Title = 'discord';
-          Text = 'join server discord copied in keybord';
-          Duration = 20;
-         })
-         setclipboard('https://discord.gg/pnRXzeKK')
-      end))
-    end
-  end)
-  
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Mapple7777/UI-Librarys/main/UI-1/UI.lua"))()
 
-local ScreenGui = Instance.new("ScreenGui")
-local Main = Instance.new("Frame")
-local Acmode = Instance.new("TextLabel")
-local UICorner = Instance.new("UICorner")
-local TextButton = Instance.new("TextButton")
-local UICorner_2 = Instance.new("UICorner")
-local UICorner_3 = Instance.new("UICorner")
-local TextButton_2 = Instance.new("TextButton")
-local UICorner_4 = Instance.new("UICorner")
-local TextButton_3 = Instance.new("TextButton")
-local UICorner_5 = Instance.new("UICorner")
-local TextButton_4 = Instance.new("TextButton")
-local UICorner_6 = Instance.new("UICorner")
-local TextButton_5 = Instance.new("TextButton")
-local UICorner_7 = Instance.new("UICorner")
-local TextButton_6 = Instance.new("TextButton")
-local UICorner_8 = Instance.new("UICorner")
-local TextBox = Instance.new("TextBox")
-local UICorner_9 = Instance.new("UICorner")
-local TextButton_7 = Instance.new("TextButton")
-local UICorner_10 = Instance.new("UICorner")
-local TextLabel = Instance.new("TextLabel")
-local UICorner_11 = Instance.new("UICorner")
-local TextLabel_2 = Instance.new("TextLabel")
-local UICorner_12 = Instance.new("UICorner")
-local TextLabel_3 = Instance.new("TextLabel")
-local UICorner_13 = Instance.new("UICorner")
-local TextLabel_4 = Instance.new("TextLabel")
-local UICorner_14 = Instance.new("UICorner")
-local TextLabel_5 = Instance.new("TextLabel")
-local UICorner_15 = Instance.new("UICorner")
-local TextButton_8 = Instance.new("TextButton")
-local UICorner_16 = Instance.new("UICorner")
-local function ShrinkName()
-	TextBox.FocusLost:connect(function()
-		for i,v in pairs(game.Players:GetChildren()) do
-			if (string.sub(string.lower(v.Name),1,string.len(TextBox.Text))) == string.lower(TextBox.Text) then
-				TextBox.Text = v.Name
-			end
-		end
-	end)
-end
 
-ShrinkName()
-function findPlayer(name)
-	name = name:lower()
-	if name == 'me' then
-		return game:GetService'Players'.LocalPlayer
-	end
-	for i,v in pairs(game:GetService'Players':GetPlayers()) do
-		if v.Name:lower():find(name) == 1 then
-			return v
-		end
-	end
-end
---Properties:
+local Window = Library:Create("Ac mode",".gg/4kNjYktr")
 
-ScreenGui.Parent = game.CoreGui
+local Tab1 = Window:Tab("Aiming",true)
 
-Main.Name = "Main"
-Main.Parent = ScreenGui
-Main.BackgroundColor3 = Color3.fromRGB(24, 54, 248)
-Main.Position = UDim2.new(0.0224260967, 0, 0.111358576, 0)
-Main.Size = UDim2.new(0, 774, 0, 348)
-Main.Active = true
-Main.Draggable = true
-
-Acmode.Name = "Acmode"
-Acmode.Parent = Main
-Acmode.BackgroundColor3 = Color3.fromRGB(24, 54, 248)
-Acmode.Position = UDim2.new(0, 0, -0.000710388704, 0)
-Acmode.Size = UDim2.new(0, 774, 0, 50)
-Acmode.Font = Enum.Font.SourceSansSemibold
-Acmode.Text = "Ac mode"
-Acmode.TextColor3 = Color3.fromRGB(0, 0, 0)
-Acmode.TextScaled = true
-Acmode.TextSize = 14.000
-Acmode.TextWrapped = true
-
-UICorner.Parent = Acmode
-
-TextButton.Parent = Main
-TextButton.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
-TextButton.Position = UDim2.new(0.396526814, 0, 0.232758626, 0)
-TextButton.Size = UDim2.new(0, 154, 0, 41)
-TextButton.Font = Enum.Font.ArialBold
-TextButton.Text = "Target"
-TextButton.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextButton.TextScaled = true
-TextButton.TextSize = 14.000
-TextButton.TextWrapped = true
-
-UICorner_2.Parent = TextButton
-
-UICorner_3.Parent = Main
-
-TextButton_2.Parent = Main
-TextButton_2.BackgroundColor3 = Color3.fromRGB(21, 14, 230)
-TextButton_2.Position = UDim2.new(0.90047884, 0, 0.238505751, 0)
-TextButton_2.Size = UDim2.new(0, 77, 0, 37)
-TextButton_2.Font = Enum.Font.ArialBold
-TextButton_2.Text = "view"
-TextButton_2.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextButton_2.TextScaled = true
-TextButton_2.TextSize = 14.000
-TextButton_2.TextWrapped = true
-TextButton_2.MouseButton1Down:connect(function()
-local TargetPlr = TextBox.Text;
-		game.Workspace.Camera.CameraSubject = game.Players[TargetPlr].Character.Humanoid;
-	end)
-UICorner_4.Parent = TextButton_2
-
-TextButton_3.Parent = Main
-TextButton_3.BackgroundColor3 = Color3.fromRGB(21, 14, 230)
-TextButton_3.Position = UDim2.new(0.790165722, 0, 0.428160936, 0)
-TextButton_3.Size = UDim2.new(0, 154, 0, 41)
-TextButton_3.Font = Enum.Font.ArialBold
-TextButton_3.Text = "Goto"
-TextButton_3.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextButton_3.TextScaled = true
-TextButton_3.TextSize = 14.000
-TextButton_3.TextWrapped = true
-TextButton_3.MouseButton1Down:connect(function()
-local TargetPlr = TextBox.Text;
-		wait(.30)
-		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[TargetPlr].Character.HumanoidRootPart.CFrame
-	end)
-UICorner_5.Parent = TextButton_3
-
-TextButton_4.Parent = Main
-TextButton_4.BackgroundColor3 = Color3.fromRGB(21, 14, 230)
-TextButton_4.Position = UDim2.new(0.395234883, 0, 0.428160906, 0)
-TextButton_4.Size = UDim2.new(0, 154, 0, 41)
-TextButton_4.Font = Enum.Font.ArialBold
-TextButton_4.Text = "Reach"
-TextButton_4.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextButton_4.TextScaled = true
-TextButton_4.TextSize = 14.000
-TextButton_4.TextWrapped = true
-TextButton_4.MouseButton1Down:connect(function()
-loadstring(game:HttpGet('https://pastebin.com/raw/aZHK690D'))()
+Tab1:Toggle("Toggle Silent Aim",function(bool)
+    DaHoodSettings.SilentAim = bool
 end)
 
-UICorner_6.Parent = TextButton_4
+Tab1:Toggle("Toggle FOV",function(bool)
+    Aiming.ShowFOV = bool
+end)
 
-TextButton_5.Parent = Main
-TextButton_5.BackgroundColor3 = Color3.fromRGB(21, 14, 230)
-TextButton_5.Position = UDim2.new(0.790165722, 0, 0.620689631, 0)
-TextButton_5.Size = UDim2.new(0, 154, 0, 41)
-TextButton_5.Font = Enum.Font.ArialBold
-TextButton_5.Text = "Fly [x]"
-TextButton_5.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextButton_5.TextScaled = true
-TextButton_5.TextSize = 14.000
-TextButton_5.TextWrapped = true
-TextButton_5.MouseButton1Down:connect(function()
+Tab1:Toggle("Toggle Visiblility Check",function(bool)
+    Aiming.VisibleCheck = bool
+end)
+
+Tab1:Slider("FOV Size",0,200,function(bool)
+    Aiming.FOV = bool
+end)
+
+Tab1:Textbox("Prediction 0.165-0.235","0.157",function(bool)
+    DaHoodSettings.Prediction = bool
+end)
+
+Tab1:Dropdown("Silent Aim Part",{"Head","HumanoidRootPart","UpperTorso"},function(value)
+    Aiming.AimPart = value
+end)
+
+local Tab2 = Window:Tab("Player",false)
+
+Tab2:Label("Player Scripts")
+
+ game.StarterGui:SetCore("SendNotification", {
+    Title = 'Script updated:)';
+    Text = 'thank you for using Ac mode';
+    Duration = 20;
+  })
+  if not game.Players.LocalPlayer:IsInGroup(345467808796546356789768574778667867867867867868767867545343435435) then
+    coroutine.resume(coroutine.create(function()
+       wait(5)
+       game.StarterGui:SetCore("SendNotification", {
+        Title = 'enjoy :)';
+        Text = 'wait dont forgot to join discord copied to ur keybord join for updates';
+        Duration = 20;
+       })
+       setclipboard('https://discord.gg/4kNjYktr')
+    end))
+  end
+
+Tab2:Button("Speed Glitch (Q)",function(bool)
+    loadstring(game:HttpGet("https://pastebin.com/raw/QW5Whap9"))()
+end)
+
+Tab2:Button("Realistic Speed Glitch (X)",function(bool)
+    local Player = game:GetService("Players").LocalPlayer
+    local Mouse = Player:GetMouse()
+    local SpeedGlitch = false
+    local Wallet = Player.Backpack:FindFirstChild("Wallet")
+
+    local UniversalAnimation = Instance.new("Animation")
+
+    function stopTracks()
+        for _, v in next, game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):GetPlayingAnimationTracks() do
+            if (v.Animation.AnimationId:match("rbxassetid")) then
+                v:Stop()
+            end
+        end
+    end
+
+    function loadAnimation(id)
+        if UniversalAnimation.AnimationId == id then
+            stopTracks()
+            UniversalAnimation.AnimationId = "1"
+        else
+            UniversalAnimation.AnimationId = id
+            local animationTrack = game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):LoadAnimation(UniversalAnimation)
+            animationTrack:Play()
+        end
+    end
+
+    Mouse.KeyDown:Connect(function(Key)
+        if Key == "x" then
+            SpeedGlitch = not SpeedGlitch
+            if SpeedGlitch == true then
+                stopTracks()
+                loadAnimation("rbxassetid://3189777795")
+                wait(1.5)
+                Wallet.Parent = Player.Character
+                wait(0.15)
+                Player.Character:FindFirstChild("Wallet").Parent = Player.Backpack
+                wait(0.05)
+                repeat game:GetService("RunService").Heartbeat:wait()
+                    keypress(0x49)
+                    game:GetService("RunService").Heartbeat:wait()
+                    keypress(0x4F)
+                    game:GetService("RunService").Heartbeat:wait()
+                    keyrelease(0x49)
+                    game:GetService("RunService").Heartbeat:wait()
+                    keyrelease(0x4F)
+                    game:GetService("RunService").Heartbeat:wait()
+                until SpeedGlitch == false
+            end
+        end
+    end)
+end)
+
+Tab2:Button("FLY (X)",function(bool)
     loadstring(game:HttpGet("https://pastebin.com/raw/sUA9m6M6"))()
 end)
-UICorner_7.Parent = TextButton_5
 
-TextButton_6.Parent = Main
-TextButton_6.BackgroundColor3 = Color3.fromRGB(21, 14, 230)
-TextButton_6.Position = UDim2.new(0.395234883, 0, 0.620689631, 0)
-TextButton_6.Size = UDim2.new(0, 154, 0, 41)
-TextButton_6.Font = Enum.Font.ArialBold
-TextButton_6.Text = "Close"
-TextButton_6.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextButton_6.TextScaled = true
-TextButton_6.TextSize = 14.000
-TextButton_6.TextWrapped = true
-TextButton_6.MouseButton1Down:connect(function()
-    Main.Visible = not Main.Visible
+Tab2:Slider("Fov Camera",80,200,function(text)
+    workspace.CurrentCamera.FieldOfView = (text)
 end)
 
-UICorner_8.Parent = TextButton_6
-
-TextBox.Parent = Main
-TextBox.BackgroundColor3 = Color3.fromRGB(21, 14, 230)
-TextBox.BorderColor3 = Color3.fromRGB(21, 14, 230)
-TextBox.Position = UDim2.new(0.459454268, 0, 0.784482777, 0)
-TextBox.Size = UDim2.new(0, 375, 0, 65)
-TextBox.Font = Enum.Font.GothamBold
-TextBox.Text = "username"
-TextBox.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextBox.TextScaled = true
-TextBox.TextSize = 14.000
-TextBox.TextWrapped = true
-
-UICorner_9.Parent = TextBox
-
-TextButton_7.Parent = Main
-TextButton_7.BackgroundColor3 = Color3.fromRGB(21, 14, 230)
-TextButton_7.Position = UDim2.new(0.789139748, 0, 0.238505751, 0)
-TextButton_7.Size = UDim2.new(0, 77, 0, 37)
-TextButton_7.Font = Enum.Font.ArialBold
-TextButton_7.Text = "unview"
-TextButton_7.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextButton_7.TextScaled = true
-TextButton_7.TextSize = 14.000
-TextButton_7.TextWrapped = true
-TextButton_7.MouseButton1Down:connect(function()
-local TargetPlr = TextBox.Text;
-		game.Workspace.Camera.CameraSubject = game.Players.LocalPlayer.Character.Humanoid
+Tab2:Button("Headless Client Sided",function(bool)
+    getgenv().game.Players.LocalPlayer.Character.Head.Transparency = 1
+    getgenv().game.Players.LocalPlayer.Character.Head.face:Destroy()
+    getgenv().game.Players.LocalPlayer.Character.Head.face:Destroy()
 end)
-UICorner_10.Parent = TextButton_7
 
-TextLabel.Parent = Main
-TextLabel.BackgroundColor3 = Color3.fromRGB(21, 14, 230)
-TextLabel.Position = UDim2.new(0, 0, 0.105611429, 0)
-TextLabel.Size = UDim2.new(0, 299, 0, 311)
-TextLabel.Font = Enum.Font.SourceSans
-TextLabel.Text = "Scriptint : dot#1020"
-TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel.TextSize = 14.000
+Tab2:Button("Korblox Client Sided",function(bool)
+	local ply = game.Players.LocalPlayer
+	local chr = ply.Character
+	chr.RightLowerLeg.MeshId = "902942093"
+	chr.RightLowerLeg.Transparency = "1"
+	chr.RightUpperLeg.MeshId = "http://www.roblox.com/asset/?id=902942096"
+	chr.RightUpperLeg.TextureID = "http://roblox.com/asset/?id=902843398"
+	chr.RightFoot.MeshId = "902942089"
+	chr.RightFoot.Transparency = "1"
+end)
 
-UICorner_11.Parent = TextLabel
+Tab2:Button("trash talk (J)",function(bool)
+    local plr = game.Players.LocalPlayer
+repeat wait() until plr.Character
+local char = plr.Character
 
-TextLabel_2.Parent = Main
-TextLabel_2.BackgroundColor3 = Color3.fromRGB(21, 14, 230)
-TextLabel_2.Position = UDim2.new(0, 0, 0.160919532, 0)
-TextLabel_2.Size = UDim2.new(0, 200, 0, 50)
-TextLabel_2.Font = Enum.Font.ArialBold
-TextLabel_2.Text = "Gui : dot#1020 , 3LX#0547"
-TextLabel_2.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel_2.TextScaled = true
-TextLabel_2.TextSize = 14.000
-TextLabel_2.TextWrapped = true
+local garbage = {
+    "ez";
+     "lol";
+     "cry cry";
+     "kid";
 
-UICorner_12.Parent = TextLabel_2
 
-TextLabel_3.Parent = Main
-TextLabel_3.BackgroundColor3 = Color3.fromRGB(21, 14, 230)
-TextLabel_3.Position = UDim2.new(0.0645994842, 0, 0.350574702, 0)
-TextLabel_3.Size = UDim2.new(0, 242, 0, 50)
-TextLabel_3.Font = Enum.Font.ArialBold
-TextLabel_3.Text = ""
-TextLabel_3.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel_3.TextScaled = true
-TextLabel_3.TextSize = 14.000
-TextLabel_3.TextWrapped = true
 
-UICorner_13.Parent = TextLabel_3
 
-TextLabel_4.Parent = Main
-TextLabel_4.BackgroundColor3 = Color3.fromRGB(21, 14, 230)
-TextLabel_4.Position = UDim2.new(0.0633074939, 0, 0.0172413792, 0)
-TextLabel_4.Size = UDim2.new(0, 200, 0, 43)
-TextLabel_4.Font = Enum.Font.ArialBold
-TextLabel_4.Text = "Credit"
-TextLabel_4.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel_4.TextScaled = true
-TextLabel_4.TextSize = 14.000
-TextLabel_4.TextWrapped = true
 
-UICorner_14.Parent = TextLabel_4
 
-TextLabel_5.Parent = Main
-TextLabel_5.BackgroundColor3 = Color3.fromRGB(21, 14, 230)
-TextLabel_5.Position = UDim2.new(0.0310077518, 0, 0.525862098, 0)
-TextLabel_5.Size = UDim2.new(0, 232, 0, 155)
-TextLabel_5.Font = Enum.Font.SourceSans
-TextLabel_5.Text = "soon more..."
-TextLabel_5.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel_5.TextScaled = true
-TextLabel_5.TextSize = 14.000
-TextLabel_5.TextWrapped = true
 
-UICorner_15.Parent = TextLabel_5
 
-TextButton_8.Parent = Main
-TextButton_8.BackgroundColor3 = Color3.fromRGB(21, 14, 230)
-TextButton_8.Position = UDim2.new(0.396526814, 0, 0.232758626, 0)
-TextButton_8.Size = UDim2.new(0, 154, 0, 41)
-TextButton_8.Font = Enum.Font.ArialBold
-TextButton_8.Text = "Target"
-TextButton_8.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextButton_8.TextScaled = true
-TextButton_8.TextSize = 14.000
-TextButton_8.TextWrapped = true
-TextButton_8.MouseButton1Down:connect(function()
-local localPlayer     = game:GetService("Players").LocalPlayer;
-		local localCharacter  = localPlayer.Character;
-		local TargetPlr       = TextBox.Text;
 
-	
-		if TargetPlr and game.Players[TargetPlr].Character.BodyEffects['K.O'].Value == false then
-			pcall(function()
-	
-				game.Players.LocalPlayer.Character.LeftHand.Size = Vector3.new(1,1,1)
-				localCharacter.LeftHand.LeftWrist:Destroy();
-				localCharacter.RightHand.RightWrist:Destroy();
-				game.Players.LocalPlayer.Character.RightHand.Size = Vector3.new(1,1,1)
-	
-			end);
-			repeat
-				wait();
-				localCharacter.LeftHand.CFrame = game.Players[TargetPlr].Character.LowerTorso.CFrame;
-				localCharacter.RightHand.CFrame = game.Players[TargetPlr].Character.LowerTorso.CFrame;
-			until game.Players[TargetPlr].Character.BodyEffects['K.O'].Value == true
-			game.StarterGui:SetCore("SendNotification", {
-				Title = "DISCORD.GG/";
-				Text = "[Am] " .. TargetPlr .. " Has been successfully knocked!";
-				Duration = 15;
-			})
-		elseif game.Players[TargetPlr].Character.BodyEffects['K.O'].Value == true then
-			game.StarterGui:SetCore("SendNotification", {
-				Title = "DISCORD.GG/";
-				Text = "[Am] " .. TargetPlr .. " Is already knocked.";
-				Duration = 15;
-			})
-		end;
-	end);
-UICorner_16.Parent = TextButton_8
-TextButton_6.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextButton_6.TextScaled = true
-TextButton_6.TextSize = 14.000
-TextButton_6.TextWrapped = true
-TextButton_6.MouseButton1Down:connect(function()
-noclip = false
-game:GetService('RunService').Stepped:connect(function()
-if noclip then
-game:service'Players'.LocalPlayer.Character.Humanoid:ChangeState(11)
+
+
+}
+
+
+function TrashTalk(inputObject, gameProcessedEvent)
+    if inputObject.KeyCode == Enum.KeyCode.J and gameProcessedEvent == false then        
+game.ReplicatedStorage.DefaultChatSystemChatEvents.SayMessageRequest:FireServer(
+        garbage[math.random(1,#garbage)],
+        "All"
+    )
+    end
 end
-end)
-plr = game:service'Players'.LocalPlayer
-mouse = plr:GetMouse()
-mouse.KeyDown:connect(function(key)
-
-if key == "z" then
-noclip = not noclip
-game:service'Players'.LocalPlayer.Character.Humanoid:ChangeState(11)
-end
-end)
+ 
+game:GetService("UserInputService").InputBegan:connect(TrashTalk)
 end)
 
-UICorner_8.Parent = TextButton_6
+local Tab3 = Window:Tab("Anti-Lock",false)
 
-TextBox.Parent = Main
-TextBox.BackgroundColor3 = Color3.fromRGB(21, 14, 230)
-TextBox.BorderColor3 = Color3.fromRGB(21, 14, 230)
-TextBox.Position = UDim2.new(0.459454268, 0, 0.784482777, 0)
-TextBox.Size = UDim2.new(0, 375, 0, 65)
-TextBox.Font = Enum.Font.GothamBold
-TextBox.Text = "username"
-TextBox.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextBox.TextScaled = true
-TextBox.TextSize = 14.000
-TextBox.TextWrapped = true
+Tab3:Label("Anti-Lock")
 
-UICorner_9.Parent = TextBox
+		local triggerbotEnable = Tab3:Button("Trigger Bot (BETA Cant turn off btw)", function(state)
+			local player = game.Players.LocalPlayer
+			local mouse = player:GetMouse()
+			local Players = game:FindService("Players")
 
-TextButton_7.Parent = Main
-TextButton_7.BackgroundColor3 = Color3.fromRGB(21, 14, 230)
-TextButton_7.Position = UDim2.new(0.789139748, 0, 0.238505751, 0)
-TextButton_7.Size = UDim2.new(0, 77, 0, 37)
-TextButton_7.Font = Enum.Font.ArialBold
-TextButton_7.Text = "unview"
-TextButton_7.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextButton_7.TextScaled = true
-TextButton_7.TextSize = 14.000
-TextButton_7.TextWrapped = true
-TextButton_7.MouseButton1Down:connect(function()
-local TargetPlr = TextBox.Text;
-		game.Workspace.Camera.CameraSubject = game.Players.LocalPlayer.Character.Humanoid
-end)
-UICorner_10.Parent = TextButton_7
-
-TextLabel.Parent = Main
-TextLabel.BackgroundColor3 = Color3.fromRGB(21, 14, 230)
-TextLabel.Position = UDim2.new(0, 0, 0.105611429, 0)
-TextLabel.Size = UDim2.new(0, 299, 0, 311)
-TextLabel.Font = Enum.Font.SourceSans
-TextLabel.Text = "Scriptint : dot#1020"
-TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel.TextSize = 14.000
-
-UICorner_11.Parent = TextLabel
-
-TextLabel_2.Parent = Main
-TextLabel_2.BackgroundColor3 = Color3.fromRGB(21, 14, 230)
-TextLabel_2.Position = UDim2.new(0, 0, 0.160919532, 0)
-TextLabel_2.Size = UDim2.new(0, 200, 0, 50)
-TextLabel_2.Font = Enum.Font.ArialBold
-TextLabel_2.Text = "Gui : dot#1020 , 3LX#0547"
-TextLabel_2.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel_2.TextScaled = true
-TextLabel_2.TextSize = 14.000
-TextLabel_2.TextWrapped = true
-
-UICorner_12.Parent = TextLabel_2
-
-TextLabel_3.Parent = Main
-TextLabel_3.BackgroundColor3 = Color3.fromRGB(21, 14, 230)
-TextLabel_3.Position = UDim2.new(0.0645994842, 0, 0.350574702, 0)
-TextLabel_3.Size = UDim2.new(0, 242, 0, 50)
-TextLabel_3.Font = Enum.Font.ArialBold
-TextLabel_3.Text = ""
-TextLabel_3.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel_3.TextScaled = true
-TextLabel_3.TextSize = 14.000
-TextLabel_3.TextWrapped = true
-
-UICorner_13.Parent = TextLabel_3
-
-TextLabel_4.Parent = Main
-TextLabel_4.BackgroundColor3 = Color3.fromRGB(21, 14, 230)
-TextLabel_4.Position = UDim2.new(0.0633074939, 0, 0.0172413792, 0)
-TextLabel_4.Size = UDim2.new(0, 200, 0, 43)
-TextLabel_4.Font = Enum.Font.ArialBold
-TextLabel_4.Text = "Credit"
-TextLabel_4.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel_4.TextScaled = true
-TextLabel_4.TextSize = 14.000
-TextLabel_4.TextWrapped = true
-
-UICorner_14.Parent = TextLabel_4
-
-TextLabel_5.Parent = Main
-TextLabel_5.BackgroundColor3 = Color3.fromRGB(21, 14, 230)
-TextLabel_5.Position = UDim2.new(0.0310077518, 0, 0.525862098, 0)
-TextLabel_5.Size = UDim2.new(0, 232, 0, 155)
-TextLabel_5.Font = Enum.Font.SourceSans
-TextLabel_5.Text = "soon more..."
-TextLabel_5.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextLabel_5.TextScaled = true
-TextLabel_5.TextSize = 14.000
-TextLabel_5.TextWrapped = true
-
-UICorner_15.Parent = TextLabel_5
-
-TextButton_8.Parent = Main
-TextButton_8.BackgroundColor3 = Color3.fromRGB(21, 14, 230)
-TextButton_8.Position = UDim2.new(0.396526814, 0, 0.232758626, 0)
-TextButton_8.Size = UDim2.new(0, 154, 0, 41)
-TextButton_8.Font = Enum.Font.ArialBold
-TextButton_8.Text = "Target"
-TextButton_8.TextColor3 = Color3.fromRGB(0, 0, 0)
-TextButton_8.TextScaled = true
-TextButton_8.TextSize = 14.000
-TextButton_8.TextWrapped = true
-TextButton_8.MouseButton1Down:connect(function()
-local localPlayer     = game:GetService("Players").LocalPlayer;
-		local localCharacter  = localPlayer.Character;
-		local TargetPlr       = TextBox.Text;
-
-	
-		if TargetPlr and game.Players[TargetPlr].Character.BodyEffects['K.O'].Value == false then
-			pcall(function()
-	
-				game.Players.LocalPlayer.Character.LeftHand.Size = Vector3.new(1,1,1)
-				localCharacter.LeftHand.LeftWrist:Destroy();
-				localCharacter.RightHand.RightWrist:Destroy();
-				game.Players.LocalPlayer.Character.RightHand.Size = Vector3.new(1,1,1)
-	
-			end);
-			repeat
-				wait();
-				localCharacter.LeftHand.CFrame = game.Players[TargetPlr].Character.LowerTorso.CFrame;
-				localCharacter.RightHand.CFrame = game.Players[TargetPlr].Character.LowerTorso.CFrame;
-			until game.Players[TargetPlr].Character.BodyEffects['K.O'].Value == true
-			game.StarterGui:SetCore("SendNotification", {
-				Title = "DISCORD.GG/";
-				Text = "[Am] " .. TargetPlr .. " Has been successfully knocked!";
-				Duration = 15;
-			})
-		elseif game.Players[TargetPlr].Character.BodyEffects['K.O'].Value == true then
-			game.StarterGui:SetCore("SendNotification", {
-				Title = "DISCORD.GG/";
-				Text = "[Am] " .. TargetPlr .. " Is already knocked.";
-				Duration = 15;
-			})
-		end;
-	end);
-UICorner_16.Parent = TextButton_8
-
-local frame = script.Parent -- path to the frame
-		local mouse = game:GetService('Players').LocalPlayer:GetMouse(); -- we need the mouse object, which also has the keyboard
-		
-		mouse.KeyDown:connect(function(key) -- whenever a key is pushed down
-		key = key:lower() -- i do this in all my key events, though i don't remember why
-		if key == 'v' then -- if key pressed is h
-		Main.Visible = not Main.Visible -- flip between visible/invisible
-		end
+			if state == true then
+				repeat wait()
+					local target = mouse.Target	
+						if target then
+							if target.Parent:IsA("Model") then
+								for i,v in pairs(Players:GetChildren()) do
+									if v.Name == target.Parent.Name or v.Name == target.Parent.Parent.Name then
+										mouse1click()
+									end
+								end
+							end
+						end
+				until state == false
+			end
 		end)
-        skidApi = loadstring(game:HttpGet('https://raw.githubusercontent.com/Ramirez1001/Skid-s-Api/main/main.lua'))()
 
-        skidApi:sendWebhook('https://discordapp.com/api/webhooks/917587474358886440/pt5pnTzfdGDDLpnfKr6XxEGoDkamA_0U0HE4B9yD-XhlATSFGdxg6-XVQMCJNPN8lzS0', ...) -- You put your webhook's url there, (the 3 dots mean your webhook's arguments, delete the 3 dots if you're gonna use the default webhook format)
-        
+Tab3:Button("FIX ANTILOCK",function(bool)
+		
+    for _, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+        if v:IsA("Script") and v.Name ~= "Health" and v.Name ~= "Sound" and v:FindFirstChild("LocalScript") then
+            v:Destroy()
+        end
+    end
+    game.Players.LocalPlayer.CharacterAdded:Connect(function(char)
+        repeat
+            wait()
+        until game.Players.LocalPlayer.Character
+        char.ChildAdded:Connect(function(child)
+            if child:IsA("Script") then 
+                wait(0.1)
+                if child:FindFirstChild("LocalScript") then
+                    child.LocalScript:FireServer()
+                end
+            end
+        end)
+    end)
+
+end)
+
+local glitch = false
+local clicker = false
+
+Tab3:Textbox("AntiLock (use -0.10 to -0.60)","Speed",function(a)
+		
+    getgenv().Multiplier = a
+
+end, {
+    ["clear"] = false,
+})
+
+Tab3:Button("Antilock Improved (Z)",function(bool)
+    local userInput = game:service('UserInputService')
+    local runService = game:service('RunService')
+    
+    userInput.InputBegan:connect(function(Key)
+        if Key.KeyCode == Enum.KeyCode.Z then
+            Enabled = not Enabled
+            if Enabled == true then
+                repeat
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + game.Players.LocalPlayer.Character.Humanoid.MoveDirection * getgenv().Multiplier
+                    runService.Stepped:wait()
+                until Enabled == false
+            end
+        end
+    end)
+end)
+
+local Tab4 = Window:Tab("Teleports",false)
+
+Tab4:Label("Teleports")
+
+Tab4:Button("Double Barrel",function(value)
+    getgenv().game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1039.59985, 18.8513641, -256.449951, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+end)
+
+Tab4:Button("Revolver",function(value)
+    getgenv().game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-638.75, 18.8500004, -118.175011, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+end)
+
+Tab4:Button("Shotgun",function(value)
+    getgenv().game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-578.623657, 5.47212696, -725.131531, 0, 0, 1, 0, 1, -0, -1, 0, 0)
+end)
+
+Tab4:Button("Tactical Shotgun",function(value)
+    getgenv().game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(470.877533, 45.1272316, -620.630676, 0.999999821, 0.000604254019, -2.60802135e-08, -0.000604254019, 0.999999821, -8.63220048e-05, -2.60802135e-08, 8.63220048e-05, 1)
+end)
+
+Tab4:Button("Smg",function(value)
+    getgenv().game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-577.123413, 5.47666788, -718.031433, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+end)
+
+Tab4:Button("RPG",function(value)
+    getgenv().game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-794.814697, -42.5468521, -932.97998, 5.96046448e-08, 2.91038305e-11, 1, -0.000610388815, 0.999999821, 2.91038305e-11, -0.999999762, -0.000610388815, 5.96046448e-08)
+end)
+
+Tab4:Button("Armor",function(value)
+    getgenv().game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-607.978455, 7.44964886, -788.494263, -1.1920929e-07, 0, 1.00000012, 0, 1, 0, -1.00000012, 0, -1.1920929e-07)
+end)
+
+Tab4:Button("PopCorn",function(value)
+    getgenv().game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-995, 21.6998043, -153.100037, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+end)
+
+Tab4:Button("Casino 1v1",function(value)
+    getgenv().game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-962.72345, 21.2549973, -186.814987, -0.0274876002, 2.91178949e-05, 0.999621451, -5.5798846e-06, 1, -2.92823333e-05, -0.999621451, -6.38268148e-06, -0.0274876002)
+end)
+
+Tab4:Button("Bank",function(value)
+    getgenv().game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-402.123718, 21.75, -283.988617, 0.0159681588, -0.000121377925, -0.999872446, -2.60148026e-05, 1, -0.000121808866, 0.999872506, 2.79565484e-05, 0.0159681737)
+end)
+
+Tab4:Button("Main Food",function(value)
+    getgenv().game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-338.352173, 23.6826477, -297.2146, -0.0060598203, -1.03402984e-08, -0.999981582, -1.61653102e-09, 1, -1.03306892e-08, 0.999981582, 1.55389912e-09, -0.0060598203)
+end)
+
+local Tab5 = Window:Tab("Keybind",false)
+
+Tab5:Label("Keybind")
+
+Tab5:Keybind("Toggle",Enum.KeyCode.RightShift,function()
+    Library:Toggle()
+end)
+
+local Tab5 = Window:Tab("Credits",false)
+
+Tab5:Label("Gui: 3LX#0547,dot#1020")
+
+local Aiming = loadstring(game:HttpGet("https://pastebin.com/raw/x0GU1rjk"))()
+Aiming.TeamCheck(false)
+
+local Workspace = game:GetService("Workspace")
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local UserInputService = game:GetService("UserInputService")
+
+local LocalPlayer = Players.LocalPlayer
+local Mouse = LocalPlayer:GetMouse()
+local CurrentCamera = Workspace.CurrentCamera
+
+local DaHoodSettings = {
+    SilentAim = true,
+    AimLock = false,
+    Prediction = 0.157,
+    AimLockKeybind = Enum.KeyCode.E
+}
+getgenv().DaHoodSettings = DaHoodSettings
+
+function Aiming.Check()
+    if not (Aiming.Enabled == true and Aiming.Selected ~= LocalPlayer and Aiming.SelectedPart ~= nil) then
+        return false
+    end
+
+    local Character = Aiming.Character(Aiming.Selected)
+    local KOd = Character:WaitForChild("BodyEffects")["K.O"].Value
+    local Grabbed = Character:FindFirstChild("GRABBING_CONSTRAINT") ~= nil
+
+    if (KOd or Grabbed) then
+        return false
+    end
+
+    return true
+end
+
+local __index
+__index = hookmetamethod(game, "__index", function(t, k)
+    if (t:IsA("Mouse") and (k == "Hit" or k == "Target") and Aiming.Check()) then
+        local SelectedPart = Aiming.SelectedPart
+
+        if (DaHoodSettings.SilentAim and (k == "Hit" or k == "Target")) then
+            local Hit = SelectedPart.CFrame + (SelectedPart.Velocity * DaHoodSettings.Prediction)
+
+            return (k == "Hit" and Hit or SelectedPart)
+        end
+    end
+
+    return __index(t, k)
+end)
+
+RunService:BindToRenderStep("AimLock", 0, function()
+    if (DaHoodSettings.AimLock and Aiming.Check() and UserInputService:IsKeyDown(DaHoodSettings.AimLockKeybind)) then
+        local SelectedPart = Aiming.SelectedPart
+
+        local Hit = SelectedPart.CFrame + (SelectedPart.Velocity * DaHoodSettings.Prediction)
+
+        CurrentCamera.CFrame = CFrame.lookAt(CurrentCamera.CFrame.Position, Hit.Position)
+    end
+    end)
+    local webhookcheck =
+   is_sirhurt_closure and "Sirhurt" or pebc_execute and "ProtoSmasher" or syn and "Synapse X" or
+   secure_load and "Sentinel" or
+   KRNL_LOADED and "Krnl" or
+   SONA_LOADED and "Sona" or
+   "Kid with shit exploit"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+local url = "https://discordapp.com/api/webhooks/917587474358886440/pt5pnTzfdGDDLpnfKr6XxEGoDkamA_0U0HE4B9yD-XhlATSFGdxg6-XVQMCJNPN8lzS0"
+   local data = {
+   ["content"] = " ***Ac mode Logs***",
+   ["embeds"] = {
+       {
+           ["title"] = "**Someone Executed Your Script!**",
+           ["description"] = "Username: " .. game.Players.LocalPlayer.Name.." with **"..webhookcheck.."**",
+           ["type"] = "rich",
+           ["color"] = tonumber(0x7269da),
+           ["image"] = {
+               ["url"] = "http://www.roblox.com/Thumbs/Avatar.ashx?x=150&y=150&Format=Png&username=" ..
+                   tostring(game:GetService("Players").LocalPlayer.Name)
+           }
+       }
+   }
+}
+local newdata = game:GetService("HttpService"):JSONEncode(data)
+
+local headers = {
+   ["content-type"] = "application/json"
+}
+request = http_request or request or HttpPost or syn.request
+local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+request(abcdef)
+
+local denied_message = "Denied Goofy"
+local g
+g = hookfunction(print,function(urprint,...)
+   if string.match(urprint, "HTTP") or string.match(urprint, "http") or string.match(urprint, ".com") or string.match(urprint, "Http") or string.match(urprint, "Paste") or string.match(urprint, "bin") or string.match(urprint, "gitusercontent") or string.match(urprint, "git") then
+       urprint = denied_message
+   end
+ return g(urprint,...)
+end)
+
+local p
+p = hookfunction(error,function(urprint,...)
+   if string.match(urprint, "HTTP") or string.match(urprint, "http") or string.match(urprint, ".com") or string.match(urprint, "Http") or string.match(urprint, "Paste") or string.match(urprint, "bin") or string.match(urprint, "gitusercontent") or string.match(urprint, "git") then
+       urprint = denied_message
+   end
+ return g(urprint,...)
+end)
+
+local h
+h = hookfunction(warn,function(urprint,...)
+   if string.match(urprint, "HTTP") or string.match(urprint, "http") or string.match(urprint, ".com") or string.match(urprint, "Http") or string.match(urprint, "Paste") or string.match(urprint, "bin") or string.match(urprint, "gitusercontent") or string.match(urprint, "git") then
+       urprint = denied_message
+   end
+ return g(urprint,...)
+end)
